@@ -1,12 +1,10 @@
-require 'seo_friendly/seo_creator'
+require 'seo_friendly/seo_updater'
 module SeoFriendly
 
   module ModelHelper
 
     def update_seo_attributes
-      rule_class = RulesSearcher.new(self.class.name).find_rule
-      container = MetaContainer.new(rule_class.new(instance))
-      SeoCreator.update(container, self)
+      SeoUpdater.new(self).update
     end
 
   end

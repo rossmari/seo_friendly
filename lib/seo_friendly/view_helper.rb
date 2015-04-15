@@ -1,6 +1,5 @@
 require 'seo_friendly/seo_searcher'
-require 'seo_friendly/rules_searcher'
-require 'seo_friendly/constructors/meta_container'
+require 'seo_friendly/seo_creator'
 
 module SeoFriendly
 
@@ -11,12 +10,12 @@ module SeoFriendly
     end
 
     def meta_tags(instance)
-      container = SeoSearcher.new(instance).search
+      container = SeoSearcher.new(instance.id, instance.class.name).search || SeoCreator.new(instance).create
       MetaRenderer.render(container, self)
     end
 
     def meta_container(instance)
-      SeoSearcher.search(instance)
+      SeoSearcher.new(instance.id, instance.class.name).search || SeoCreator.new(instance).create
     end
 
   end

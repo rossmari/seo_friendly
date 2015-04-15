@@ -1,5 +1,4 @@
-#  TODO : rename from RULE to some kind of container (now this class contain only what to use for meta and how to get it)
-class DefaultRule
+class DefaultSeoSource
   attr_reader :instance
 
   def initialize(instance)

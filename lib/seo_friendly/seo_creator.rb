@@ -1,13 +1,12 @@
+require 'seo_friendly/source_searcher'
+require 'seo_friendly/data_extractor'
+require 'seo_friendly/seo_params_processor'
+
 module SeoFriendly
-  class SeoCreator
+  class SeoCreator < SeoParamsProcessor
 
-    def self.create(container, instance)
-      SeoParam.create(title: container.title, description: container.description, keywords: container.keywords, searchable: instance)
-    end
-
-    def self.update(container, instance)
-      seo_param = SeoParam.find(searchable_id: instance) || SeoParam.create(container, instance)
-      seo_param.update_attributes(title: container.title, description: container.description, keywords: container.keywords)
+    def create
+      SeoParam.create(extracted_seo_attributes.merge(searchable: instance))
     end
 
   end

@@ -24,6 +24,11 @@ TODO: Write usage instructions here
 
 ## Contributing
 
+Plans
+ 1) Add "Refresh Seo Attributes" for record
+ 2) Do not add an omission if length was not striped ???
+
+
 1. Fork it ( https://github.com/[my-github-username]/seo_friendly/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)

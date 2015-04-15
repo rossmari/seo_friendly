@@ -1,6 +1,6 @@
 module SeoFriendly
 
-  class RuleNotDefinedError < StandardError
+  class SourceNotDefinedError < StandardError
 
     MESSAGE = 'Unable to find seo rule %{policy_name} for %{object} class'
 
@@ -37,6 +37,15 @@ module SeoFriendly
       @object = object
     end
 
+  end
+
+  class ExtractDataFromSourceError < StandardError
+    MESSAGE = 'Failed to extract data from source %{source_name}. '
+    attr_reader :object
+    def initialize(source_name, stack_message)
+      super( MESSAGE % { source_name: source_name} << stack_message )
+      @object = object
+    end
   end
 
 end
