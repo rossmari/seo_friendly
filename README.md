@@ -16,7 +16,7 @@ Gem use monkey patching to add new methods to ActiveRecord and new view helpers.
 
 ## Usage
 
-Create your own model seo source file and specify information which will be used to create seo meta tags.
+Create your own seo source class for any model and specify information which will be used to create meta tags.
 Example:
 ```ruby
 # seo source class for Page model
@@ -40,10 +40,23 @@ class PageSeoSource < DefaultSeoSource
 end
 ```
 
+Then on views you can insert meta tags
+
+```haml
+  = meta_tags(@page) %>
+```
+
+To update meta information every time when you update records add to model callback:
+```ruby
+  after_save :update_seo_attributes
+```
+
 ## TODO
  1) Do not add an omission if length was not striped
  2) Add tests
  3) block and procs for seo attributes
+ 4) Renderer
+ 5) Controller helpers
 
 1. Fork it ( https://github.com/[my-github-username]/seo_friendly/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
