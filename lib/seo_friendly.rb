@@ -9,6 +9,8 @@ require 'seo_friendly/model_helper'
 module SeoFriendly
 
   ActionView::Base.send :include, SeoFriendly::ViewHelper
-  ActiveRecord::Base.send :extend, SeoFriendly::ModelHelper
+  ActiveRecord::Base.send :include, SeoFriendly::ModelHelper
+
+  require 'railtie' if defined?(Rails)
 
 end
