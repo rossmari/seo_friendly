@@ -7,7 +7,7 @@ module SeoFriendly
 
       # TODO : rename method
       def copy_default_seo_source
-        template 'default_source.rb', 'app/seo_sources/default_source.rb'
+        template 'default_seo_source.rb', 'app/seo_sources/default_seo_source.rb'
       end
 
       def copy_migrations
