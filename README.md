@@ -57,6 +57,8 @@ To update meta information every time when you update records add to model callb
  3) block and procs for seo attributes
  4) Renderer
  5) Controller helpers
+ 6) WordsSplitter is too slow, replace it with regular expression (change)
+
 
 1. Fork it ( https://github.com/[my-github-username]/seo_friendly/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)

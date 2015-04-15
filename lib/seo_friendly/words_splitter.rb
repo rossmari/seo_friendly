@@ -16,10 +16,10 @@ module SeoFriendly
       object.split.count
     end
 
-    def reduce_string
+    def self.reduce_string(object)
       array = object.split
       array.delete(array.last)
-      array.join
+      array.join(' ')
     end
 
   end

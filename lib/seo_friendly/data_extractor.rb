@@ -24,7 +24,7 @@ module SeoFriendly
         instance_variable_set("@#{attribute_name}", extractor_class.send(:extract, source.send(attribute_name)))
       end
     rescue => exception
-      raise ExtractDataFromSourceError.new(source.name, exception.message)
+      raise ExtractDataFromSourceError.new(source.class.name, exception.message)
     end
 
 
