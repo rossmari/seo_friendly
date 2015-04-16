@@ -40,27 +40,29 @@ class PageSeoSource < DefaultSeoSource
 end
 ```
 
-Then on views you can insert meta tags
+## Views
+On views you can insert meta tags using helper
 
 ```haml
   = meta_tags(@page) %>
 ```
 
+## Model
 To update meta information every time when you update records add to model callback:
 ```ruby
   after_save :update_seo_attributes
 ```
 
+## Rake
+If you change model source and want to update seo information for all instances of this model you can use rake task
+    $ rake seo_friendly:regenerate[ModelName]
+
 ## TODO
- 1) Do not add an omission if length was not striped
  2) Add tests
- 3) block and procs for seo attributes
- 4) Renderer
- 5) Controller helpers
  6) WordsSplitter is too slow, replace it with regular expression (change)
 
 
-1. Fork it ( https://github.com/[my-github-username]/seo_friendly/fork )
+1. Fork it ( https://github.com/rossmari/seo_friendly/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
