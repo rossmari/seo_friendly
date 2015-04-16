@@ -59,8 +59,10 @@ If you change model source and want to update seo information for all instances 
     $ rake seo_friendly:regenerate[ModelName]
 
 ## TODO
- 2) Add tests
- 6) WordsSplitter is too slow, replace it with regular expression (change)
+ * Add tests (RSpec)
+ * Refactor WordsSplitter
+ * Default seo from model ( on show and index actions )
+ * Default global seo attributes
 
 
 1. Fork it ( https://github.com/rossmari/seo_friendly/fork )
