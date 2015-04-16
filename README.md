@@ -55,6 +55,7 @@ To update meta information every time when you update records add to model callb
 
 ## Rake
 If you change model source and want to update seo information for all instances of this model you can use rake task
+
     $ rake seo_friendly:regenerate[ModelName]
 
 ## TODO
